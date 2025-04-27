@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery - Solid Rock Preschool</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Lightbox -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #1E88E5; /* Blue */
+            --secondary-color: #64B5F6; /* Lighter Blue */
+            --accent-color: #0D47A1; /* Dark Blue */
+            --light-color: #FFFFFF; /* White */
+            --dark-color: #2C3E50; /* Dark Blue-Gray */
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-color);
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: bold;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .page-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+        
+        .gallery-container {
+            padding: 2rem 0;
+        }
+        
+        .gallery-category {
+            margin-bottom: 4rem;
+        }
+        
+        .gallery-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+            height: 250px;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 15px;
+            color: white;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .filter-btn {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            border: 2px solid var(--secondary-color);
+            border-radius: 30px;
+            margin: 0 5px 10px;
+            padding: 8px 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 20px;
+        }
+        
+        .masonry-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 20px;
+            break-inside: avoid;
+        }
+        
+        .spotlight {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            height: 400px;
+        }
+        
+        .spotlight-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .spotlight-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 30px;
+            color: white;
+        }
+        
+        .spotlight-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .btn-back-to-top.show {
+            opacity: 1;
+        }
+        
+        .btn-back-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 20px 20px 0 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-info i {
+            width: 20px;
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .spotlight {
+                height: 300px;
+            }
+            
+            .spotlight-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+            
+            .gallery-item {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-school me-2"></i>
+                Solid Rock Preschool
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Our Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="text-center animate__animated animate__fadeIn">Our Gallery</h1>
+            <p class="text-center animate__animated animate__fadeIn">Capturing moments of joy, discovery, and growth at Solid Rock Preschool</p>
+        </div>
+    </header>
+
+    <!-- Gallery Highlights -->
+    <section>
+        <div class="container">
+            <div class="spotlight animate__animated animate__fadeIn">
+                <img src="images/image-18.jpeg" alt="Featured Image" class="spotlight-img">
+                <div class="spotlight-content">
+                    <h2 class="spotlight-title">Life at Solid Rock</h2>
+                    <p>Explore our vibrant learning environment where children learn, play, and grow together</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filter Buttons -->
+    <section>
+        <div class="container text-center mb-4">
+            <div class="filter-buttons animate__animated animate__fadeIn">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="classroom">Classroom</button>
+                <button class="filter-btn" data-filter="activities">Activities</button>
+                <button class="filter-btn" data-filter="outdoor">Outdoor</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Gallery -->
+    <section class="gallery-container">
+        <div class="container">
+            <div class="gallery-category animate__animated animate__fadeIn">
+                <h2 class="section-title mb-4">Classroom Moments</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 animate__animated animate__zoomIn" style="animation-delay: 0.1s;">
+                        <a href="images/image-25.jpeg" data-lightbox="classroom" data-title="Learning Together">
+                            <div class="gallery-item">
+                                <img src="images/image-25.jpeg" alt="Classroom Activity" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Learning Together</h3>
+                                    <p>Children engaged in collaborative fun activities</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 animate__animated animate__zoomIn" style="animation-delay: 0.2s;">
+                        <a href="images/image-16.jpeg" data-lightbox="classroom" data-title="Art Exploration">
+                            <div class="gallery-item">
+                                <img src="images/image-16.jpeg" alt="Art Activity" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Art Exploration</h3>
+                                    <p>Creative expression through colors and shapes</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 animate__animated animate__zoomIn" style="animation-delay: 0.3s;">
+                        <a href="images/image-26.jpeg" data-lightbox="classroom" data-title="Story Time">
+                            <div class="gallery-item">
+                                <img src="images/image-26.jpeg" alt="Story Time" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Fun Time</h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 animate__animated animate__zoomIn" style="animation-delay: 0.3s;">
+                        <a href="images/image-24.jpeg" data-lightbox="classroom" data-title="Story Time">
+                            <div class="gallery-item">
+                                <img src="images/image-24.jpeg" alt="Story Time" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Fun Time</h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6 animate__animated animate__zoomIn" style="animation-delay: 0.3s;">
+                        <a href="images/image-7.jpg" data-lightbox="classroom" data-title="Story Time">
+                            <div class="gallery-item">
+                                <img src="images/image-7.jpg" alt="Story Time" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Fun Time</h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 animate__animated animate__zoomIn" style="animation-delay: 0.3s;">
+                        <a href="images/image-10.jpeg" data-lightbox="classroom" data-title="Story Time">
+                            <div class="gallery-item">
+                                <img src="images/image-10.jpeg" alt="Story Time" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Fun Time</h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-category animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                <h2 class="section-title mb-4">Fun Activities</h2>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 animate__animated animate__zoomIn" style="animation-delay: 0.4s;">
+                        <a href="images/image-20.jpeg" data-lightbox="activities" data-title="Music & Movement">
+                            <div class="gallery-item" style="height: 300px;">
+                                <img src="images/image-20.jpeg" alt="Music Activity" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Music & Movement</h3>
+                                    <p>Developing rhythm and coordination through music</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 animate__animated animate__zoomIn" style="animation-delay: 0.5s;">
+                        <a href="images/image-10.jpeg" data-lightbox="activities" data-title="Sensory Play">
+                            <div class="gallery-item" style="height: 300px;">
+                                <img src="images/image-10.jpeg" alt="Sensory Play" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Sensory Play</h3>
+                                    <p>Engaging multiple senses for cognitive development</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-category animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+                <h2 class="section-title mb-4">Outdoor Adventures</h2>
+                <div class="masonry-grid">
+                    <div class="masonry-item animate__animated animate__zoomIn" style="animation-delay: 0.6s;">
+                        <a href="images/image-11.jpeg" data-lightbox="outdoor" data-title="Playground Fun">
+                            <div class="gallery-item">
+                                <img src="images/image-11.jpeg" alt="Playground" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Playground Fun</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="masonry-item animate__animated animate__zoomIn" style="animation-delay: 0.7s;">
+                        <a href="images/image-12.jpeg" data-lightbox="outdoor" data-title="Nature Exploration">
+                            <div class="gallery-item" style="height: 350px;">
+                                <img src="images/image-12.jpeg" alt="Nature Walk" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Nature Exploration</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="masonry-item animate__animated animate__zoomIn" style="animation-delay: 0.8s;">
+                        <a href="images/image-13.jpeg" data-lightbox="outdoor" data-title="Garden Activities">
+                            <div class="gallery-item">
+                                <img src="images/image-13.jpeg" alt="Garden Activities" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Garden Activities</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="masonry-item animate__animated animate__zoomIn" style="animation-delay: 0.8s;">
+                        <a href="images/image-11.jpeg" data-lightbox="outdoor" data-title="Garden Activities">
+                            <div class="gallery-item">
+                                <img src="images/image-11.jpeg" alt="Garden Activities" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title"></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="masonry-item animate__animated animate__zoomIn" style="animation-delay: 0.8s;">
+                        <a href="images/image-13.jpeg" data-lightbox="outdoor" data-title="Garden Activities">
+                            <div class="gallery-item">
+                                <img src="images/image-13.jpeg" alt="Garden Activities" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title"></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="masonry-item animate__animated animate__zoomIn" style="animation-delay: 0.8s;">
+                        <a href="images/image-15.jpeg" data-lightbox="outdoor" data-title="Garden Activities">
+                            <div class="gallery-item">
+                                <img src="images/image-15.jpeg" alt="Garden Activities" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title"></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="masonry-item animate__animated animate__zoomIn" style="animation-delay: 0.8s;">
+                        <a href="images/image-22.jpeg" data-lightbox="outdoor" data-title="Garden Activities">
+                            <div class="gallery-item">
+                                <img src="images/image-22.jpeg" alt="Garden Activities" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title"></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="masonry-item animate__animated animate__zoomIn" style="animation-delay: 0.8s;">
+                        <a href="images/image-23.jpeg" data-lightbox="outdoor" data-title="Garden Activities">
+                            <div class="gallery-item">
+                                <img src="images/image-23.jpeg" alt="Garden Activities" class="gallery-img">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title"></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="masonry-item animate__animated animate__zoomIn" style="animation-delay: 0.8s;">
+                        <a href="videos/myvideo.mp4" class="glightbox" data-gallery="gallery1" data-type="video">
+                            <div class="gallery-item">
+                                <img src="images/video-thumbnail.jpg" alt="Watch Garden Video" class="gallery-img" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <h3 class="gallery-title">Watch Video</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <script>
+                      const lightbox = GLightbox({
+                        selector: '.glightbox'
+                      });
+                    </script>
+                    
+                </div>
+            </div>
+
+     
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="footer-title">Solid Rock Preschool</h3>
+                    <div class="footer-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 1407 Lacy Dr, Baytown TX 77520</p>
+                        <p><i class="fas fa-phone"></i> 281-422-4317</p>
+                        <p><i class="fas fa-envelope"></i> solidrockpreschool1@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Daily Hours: 6am to 6:30pm</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="mt-4">
+                        <img src="images/image-20.jpeg" alt="School Logo" class="img-fluid rounded-circle floating" style="max-width: 100px; height: 100px; object-fit: cover;">
+                    </div>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-light me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Solid Rock Preschool. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn-back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap and Animation JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    
+    <script>
+        // Back to top button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                document.getElementById("backToTop").classList.add("show");
+            } else {
+                document.getElementById("backToTop").classList.remove("show");
+            }
+        };
+        
+        document.getElementById("backToTop").addEventListener("click", function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Initialize Lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'showImageNumberLabel': false,
+            'fadeDuration': 300
+        });
+        
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Filter functionality would go here
+                // (Would require additional implementation with real data)
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washington Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        
+        nav {
+            background-color: #00478f;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        .hero {
+            background-color: #f2f2f2;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            margin-bottom: 1rem;
+            color: #003366;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5rem;
+        }
+        
+        .news-item {
+            margin-bottom: 1rem;
+        }
+        
+        .news-item h4 {
+            color: #00478f;
+        }
+        
+        .news-date {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">📚</div>
+            <h1>Washington Academy</h1>
+        </div>
+        <p>Excellence in Education Since 1985</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#academics">Academics</a></li>
+            <li><a href="#admissions">Admissions</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#calendar">Calendar</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <h2>Preparing Students for Success</h2>
+        <p>Washington Academy provides a rigorous educational environment that encourages critical thinking, creativity, and character development.</p>
+    </section>
+    
+    <div class="main-content">
+        <div class="section" id="about">
+            <h3>About Us</h3>
+            <p>Washington Academy is a college preparatory school dedicated to academic excellence and character development. Our faculty and staff are committed to helping students reach their full potential in a supportive and challenging environment.</p>
+            <p>Our campus features state-of-the-art facilities including science laboratories, a performing arts center, athletic fields, and a modern library.</p>
+        </div>
+        
+        <div class="section" id="academics">
+            <h3>Academic Programs</h3>
+            <p>Our comprehensive curriculum includes:</p>
+            <ul>
+                <li>Advanced Placement courses</li>
+                <li>STEM focus programs</li>
+                <li>Visual and performing arts</li>
+                <li>Foreign language instruction</li>
+                <li>College counseling</li>
+            </ul>
+            <p>Washington Academy maintains a student-to-teacher ratio of 15:1, ensuring personalized attention for all students.</p>
+        </div>
+        
+        <div class="section" id="news">
+            <h3>School News</h3>
+            <div class="news-item">
+                <h4>Annual Science Fair Winners Announced</h4>
+                <p class="news-date">April 15, 2025</p>
+                <p>Congratulations to all participants in our annual science fair. This year's grand prize went to Sarah Johnson for her innovative research on renewable energy sources.</p>
+            </div>
+            <div class="news-item">
+                <h4>Spring Concert Scheduled</h4>
+                <p class="news-date">April 10, 2025</p>
+                <p>The music department will present its spring concert on May 5th at 7:00 PM in the auditorium. All families are welcome to attend.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="contact">
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>123 Education Lane, Springfield, ST 12345</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: info@washingtonacademy.edu</p>
+        </div>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <p>&copy; 2025 Washington Academy. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

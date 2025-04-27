@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid Rock Preschool</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+   
+   
+    <link rel="icon" type="image/png" href="images/logo-color.png">
+
+    <meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title"
+		content="Solid Rock Preschool - To nurture, inspire and challenge children in an
+		environment that sustains independent thinking,
+		creativity and respect" />
+	<meta property="og:description"
+		content="Solid Rock Preschool - To nurture, inspire and challenge children in an
+		environment that sustains independent thinking,
+		creativity and respect" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="Solid Rock " />
+    
+   <style>
+        :root {
+            --primary-color: #1E88E5; /* Blue */
+            --secondary-color: #64B5F6; /* Lighter Blue */
+            --accent-color: #0D47A1; /* Dark Blue */
+            --light-color: #FFFFFF; /* White */
+            --dark-color: #2C3E50; /* Dark Blue-Gray */
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-color);
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: bold;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        /* Banner styling - improved for better text centering */
+        .banner {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .banner-text-container {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .banner-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: white;
+        }
+        
+        .banner-text p {
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            color: white;
+        }
+        
+        .welcome-section {
+            padding: 4rem 0;
+            background-color: white;
+            border-radius: 20px;
+            margin-top: -20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+        
+        .mission-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            height: 100%;
+        }
+        
+        .mission-box h3 {
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .gallery-section {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 200px;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .view-more-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .view-more-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .footer-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-info i {
+            width: 20px;
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Improved responsiveness */
+        @media (max-width: 992px) {
+            .banner-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .banner-text p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .banner {
+                height: 400px;
+            }
+            
+            .banner-text h1 {
+                font-size: 2rem;
+            }
+            
+            .banner-text p {
+                font-size: 1rem;
+            }
+            
+            .mission-box {
+                margin-top: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .banner {
+                height: 350px;
+            }
+            
+            .banner-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .banner-text p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-school me-2"></i>
+                Solid Rock Preschool
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="philosophy.html">Our philosophy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="our-program.html">Our Programs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section - Completely restructured for better text centering -->
+    <section class="banner">
+        <img src="images/home.jpg" alt="Children playing and learning" class="banner-image">
+        <div class="banner-overlay">
+            <div class="banner-text-container">
+                <div class="banner-text animate__animated animate__fadeInUp">
+                    <h1 class="mb-3">Solid Rock Preschool</h1>
+                    <p>To nurture, inspire, and challenge children in an environment that sustains independent thinking, creativity, and respect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5 animate__animated animate__fadeIn">Welcome to Solid Rock Preschool</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate__animated animate__fadeInLeft">
+                    <p>Welcome to Solid Rock Preschool. We are a Texas Rising Star childcare center for children as young as 6 weeks old to as old as 12 years. We offer school drop-off and pick-up, before and after school care, snacks and meals, transportation to and from school, and summer camp.</p>
+                    <p>When you leave your child in our hands, you can trust that we are nurturing, teaching, and protecting your precious child. Give your child a bright start while you are taking care of your business.</p>
+                </div>
+                
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <div class="mission-box">
+                        <h3>Our Mission</h3>
+                        <p>Our mission at Solid Rock Preschool is to provide a safe, stimulating, and supportive learning environment where children can thrive. We are committed to:</p>
+                        <ul>
+                            <li>Fostering a love of learning that will last a lifetime</li>
+                            <li>Respecting each child's individual development and learning style</li>
+                            <li>Building strong partnerships with families</li>
+                            <li>Preparing children for success in school and beyond</li>
+                            <li>Creating a community where diversity is celebrated</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5 animate__animated animate__fadeIn">Our Gallery</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 animate__animated animate__fadeInUp">
+                    <div class="gallery-item">
+                        <img src="images/imag-1.jpg" alt="Children's Activity" class="gallery-image">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="gallery-item">
+                        <img src="images/image-2.jpg" alt="Classroom Environment" class="gallery-image">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="gallery-item">
+                        <img src="images/image-3.jpg" alt="Outdoor Play Area" class="gallery-image">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                    <div class="gallery-item">
+                        <img src="images/image-4.jpg" alt="Art Activities" class="gallery-image">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+                    <div class="gallery-item">
+                        <img src="images/image-5.jpg" alt="Learning Materials" class="gallery-image">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 animate__animated animate__fadeInUp" style="animation-delay: 1s;">
+                    <div class="gallery-item">
+                        <img src="images/image-6.jpg" alt="Group Activities" class="gallery-image">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button onclick="location.href='gallery.html';" class="btn btn-primary view-more-btn animate__animated animate__pulse animate__infinite">
+                    View More <i class="fas fa-arrow-right ms-2"></i>
+                </button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="footer-title">Solid Rock Preschool</h3>
+                    <div class="footer-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 1407 Lacy Dr, Baytown TX 77520</p>
+                        <p><i class="fas fa-phone"></i> 281-422-4317</p>
+                        <p><i class="fas fa-envelope"></i> solidrockpreschool1@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Daily Hours: 6am to 6:30pm</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="mt-4">
+                        <img src="images/logo-color.png" alt="School Logo" class="img-fluid rounded-circle floating" style="max-width: 100px; height: 100px; object-fit: cover;">
+                    </div>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-light me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Solid Rock Preschool</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and Animation JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Solid Rock Preschool</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+
+    
+    <link rel="icon" type="image/png" href="images/logo-color.png">
+    <meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title"
+		content="Solid Rock Preschool - To nurture, inspire and challenge children in an
+		environment that sustains independent thinking,
+		creativity and respect" />
+	<meta property="og:description"
+		content="Solid Rock Preschool - To nurture, inspire and challenge children in an
+		environment that sustains independent thinking,
+		creativity and respect" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="Solid Rock " />
+    <style>
+        :root {
+            --primary-color: #1E88E5; /* Blue */
+            --secondary-color: #64B5F6; /* Lighter Blue */
+            --accent-color: #0D47A1; /* Dark Blue */
+            --light-color: #FFFFFF; /* White */
+            --dark-color: #2C3E50; /* Dark Blue-Gray */
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-color);
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: bold;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .page-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+        
+        .program-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .program-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .program-content {
+            padding: 2rem;
+        }
+        
+        .program-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .program-description {
+            color: var(--dark-color);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-learn-more {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn-learn-more:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 20px 20px 0 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-info i {
+            width: 20px;
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .program-image-container {
+                margin-bottom: 2rem;
+            }
+            .program-image {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .program-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-school me-2"></i>
+                Solid Rock Preschool
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="philosophy.html">Our philosophy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="our-program.html">Our Programs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="text-center animate__animated animate__fadeIn">Our Programs</h1>
+            <p class="text-center animate__animated animate__fadeIn">Nurturing young minds through age-appropriate, engaging, and developmentally focused programs</p>
+        </div>
+    </header>
+
+    <!-- Programs Section -->
+    <section class="programs-section">
+        <div class="container">
+            <!-- Infant Program -->
+            <div class="program-card animate__animated animate__fadeInUp">
+                <div class="row">
+                    <div class="col-lg-5 program-image-container">
+                        <img src="images/infant.jpg" alt="Infant Program" class="program-image">
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="program-content">
+                            <h2 class="program-title">Infant Program</h2>
+                            <p class="program-description">
+                                Infants thrive in an environment where they feel safe and secure. At Solid Rock Preschool, we provide an age-appropriate play environment designed to foster movement, exploration, and communication. Our program promotes social, emotional, and language development, guided by nurturing teachers. Using music, movement, and songs, we stimulate their senses, encouraging their growth every step of the way.
+                            </p>
+                            <p class="program-description">
+                                Through a process of assessment, planning and evaluation and information sharing with parents, we are able to implement a collaborative learning programme that is in-depth and relevant.
+                            </p>
+                        <!-- //    <a href="#" class="btn btn-learn-more">Learn More <i class="fas fa-arrow-right ms-2"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toddler Program -->
+            <div class="program-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="program-content">
+                            <h2 class="program-title">Toddler Program</h2>
+                            <p class="program-description">
+                                Our toddler program introduces your child to the basic elements of early learning such as visual recognition of letters, colors, numbers, shapes, songs, patterns and a healthy social environment while building self-awareness, self-expression and confidence. Through both structured and unstructured play, our teachers help develop toddlers' gross motor and social skills.
+                            </p>
+                            <p class="program-description">
+                                We create opportunities for toddlers to explore, discover, and express themselves in a safe, supportive setting where every milestone is celebrated.
+                            </p>
+                            <!-- <a href="#" class="btn btn-learn-more">Learn More <i class="fas fa-arrow-right ms-2"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-5 program-image-container">
+                        <img src="images/toddlers.jpg" alt="Toddler Program" class="program-image">
+                    </div>
+                </div>
+            </div>
+
+
+
+                <!-- Preschool Program -->
+                <div class="program-card animate__animated animate__fadeInUp">
+                    <div class="row">
+                        <div class="col-lg-5 program-image-container">
+                            <img src="images/preschool.jpg" alt="Infant Program" class="program-image">
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="program-content">
+                                <h2 class="program-title">Preschool Program</h2>
+                                <p class="program-description">
+                                    Pre-School is a vital building block to kindergarten success. 
+                                </p>
+                                <p class="program-description">
+                                    We guarantee that children achieve significant development advancements, learn to communicate effectively, and build collaborative skills, by working independently and in groups through a robust early childhood education approach. We ensure that children are exposed to diverse learning activities and help them to thrive in all areas of child development, problem solving and creative thinking.
+                                </p>
+                            <!-- //    <a href="#" class="btn btn-learn-more">Learn More <i class="fas fa-arrow-right ms-2"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="footer-title">Solid Rock Preschool</h3>
+                    <div class="footer-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 1407 Lacy Dr, Baytown TX 77520</p>
+                        <p><i class="fas fa-phone"></i> 281-422-4317</p>
+                        <p><i class="fas fa-envelope"></i> solidrockpreschool1@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Daily Hours: 6am to 6:30pm</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="mt-4">
+                        <img src="images/logo-color.png" alt="School Logo" class="img-fluid rounded-circle floating" style="max-width: 100px; height: 100px; object-fit: cover;">
+                    </div>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-light me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Solid Rock Preschool</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and Animation JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
