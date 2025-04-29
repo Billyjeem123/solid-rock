@@ -86,7 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
+            /*background-color: rgba(100, 149, 237, 0.3); !* Cornflower Blue, soft and semi-transparent *!*/
             display: flex;
             justify-content: center;
             align-items: center;
@@ -96,7 +96,8 @@
             text-align: center;
             width: 100%;
             max-width: 800px;
-            padding: 0 20px;
+            padding: 0 27px;
+            margin-top: 190px; /* Adjust value as needed */
         }
         
         .banner-text h1 {
@@ -163,46 +164,7 @@
             margin-bottom: 20px;
         }
         
-        .gallery-section {
-            padding: 4rem 0;
-            background-color: var(--light-color);
-        }
-        
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 15px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            height: 200px;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
-        
-        .gallery-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .view-more-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-        }
-        
-        .view-more-btn:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
-        }
+
         
         footer {
             background-color: var(--dark-color);
@@ -328,7 +290,7 @@
         <div class="banner-overlay">
             <div class="banner-text-container">
                 <div class="banner-text animate__animated animate__fadeInUp">
-                    <h1 class="mb-3">Solid Rock Preschool</h1>
+                    <h5 class="mb-3" style="color: yellow;">Solid Rock Preschool</h5>
                     <p>To nurture, inspire, and challenge children in an environment that sustains independent thinking, creativity, and respect.</p>
                 </div>
             </div>
@@ -442,6 +404,27 @@
                 </div>
             </div>
 
+
+<!--After school-->
+            <div class="program-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="program-content">
+                            <h2 class="program-title">Afterschool Program</h2>
+                            <p class="program-description">
+                            </p>
+                            <p class="program-description">
+                                We Have a Designated Time for Learning. Always. Whether it’s before and/or after-school care or our full-day program, Solid Rock provides a fun, dynamic, and flexible program for school-agers to explore their interests. This program provides your child with exciting and challenging activities and projects to create, while continuing to learn outside of the classroom
+
+                            </p>
+                            <!-- <a href="#" class="btn btn-learn-more">Learn More <i class="fas fa-arrow-right ms-2"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-5 program-image-container">
+                        <img src="images/school-age.jpeg" alt="Toddler Program" class="program-image">
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
